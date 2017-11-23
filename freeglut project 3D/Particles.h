@@ -9,21 +9,21 @@ class Particles : public Objeto3DFisico
 public:
 	Particles(PuntoVector3D p, GLfloat gravedad = (-9.81), GLfloat maxVida = 100, GLfloat minVida = 90);
 	~Particles();
-	virtual	void dibuja();
-	virtual void update(GLfloat dt);
+	virtual	void dibuja();						//Dibuja una partícula
+	virtual void update(GLfloat dt);			//Update de una partícula
 
-	void reset();
-	PuntoVector3D computeForces();
-	bool isDead() { return !viva; }
-	void setSize(int tam){ size = tam; }
+	void reset();								//Reinicia la particula
+	PuntoVector3D computeForces();				//Calcula las fuerzas
+
+	
 
 private:
 
-	bool viva = true;
-	int segundos_;
-	GLfloat gravedad_;
-	GLfloat masa = 1;
-	PuntoVector3D posInicial;
-	bool activa;
+	int segundos_;								//Cuenta la vida de la particula
+	GLfloat gravedad_;							//Gravedad del mundo
+	GLfloat masa = 1;							//Masa del cuerpo
+	PuntoVector3D posInicial;					//posición de donde nace la partícula
+	bool activa;								//Si la particula está viva o no.
+
 };
 #endif
