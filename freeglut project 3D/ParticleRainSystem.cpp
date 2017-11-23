@@ -34,10 +34,10 @@ void ParticleRainSystem::update(GLfloat dt)
 
 Particles* ParticleRainSystem::creaParticula()
 {
-	Particles *p = new Particles(PuntoVector3D(world->getNumRandom(55, -55), 180, world->getNumRandom(55, -55), 0), -0.8, 200);
+	Particles *p = new Particles(PuntoVector3D(world_->getRandomNum(-55, 55), 180, world_->getRandomNum(-55, 55), 0), -0.8, 200);
 	p->setColor(PuntoVector3D(1, 1, 1, 1));
 	p->setVel(PuntoVector3D(0, 0, 0, 1));
-	p->setWorld(world);
+	p->setWorld(world_);
 	return p;
 }
 

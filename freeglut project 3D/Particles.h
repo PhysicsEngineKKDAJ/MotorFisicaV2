@@ -15,7 +15,7 @@ public:
 	void reset();
 	PuntoVector3D computeForces();
 	bool isDead() { return !viva; }
-	void setSize(int tam){ size = tam; }
+	void setSize(int tam){ size_ = tam; }
 
 private:
 

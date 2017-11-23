@@ -148,7 +148,7 @@ void display(void) {
 	dibujaEjes();
 	switch (contEscena)
 	{
-	case 0: test1.dibuja(); break;
+	case 0: test1.draw(); break;
 	default:
 		break;
 

@@ -1,10 +1,12 @@
-﻿Build started 23/11/2017 19:23:17.
-     1>Project "C:\hlocal\SIM\MotorFisicaV2\freeglut project 3D\freeglut project 3D.vcxproj" on node 2 (Build target(s)).
+﻿Compilación iniciada a las 23/11/2017 20:28:43.
+     1>Proyecto "D:\hlocal\3 GDV\1 CUATRIMESTRE\SIM\Proyecto\MotorFisicaV2\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2013\VC\bin\CL.exe /c /IC:\hlocal\SIM\MotorFisicaV2\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\hlocal\3 GDV\1 CUATRIMESTRE\SIM\Proyecto\MotorFisicaV2\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ParticleRainSystem.cpp
+         ParticleRainSystem.cpp
+     1>d:\hlocal\3 gdv\1 cuatrimestre\sim\proyecto\motorfisicav2\freeglut project 3d\particlerainsystem.cpp(21): warning C4244: 'argumento' : conversión de 'double' a 'int'; posible pérdida de datos
+     1>d:\hlocal\3 gdv\1 cuatrimestre\sim\proyecto\motorfisicav2\freeglut project 3d\particlerainsystem.cpp(37): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
        Link:
-         C:\software\programacion\MSVStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\SIM\MotorFisicaV2\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\hlocal\SIM\MotorFisicaV2\freeglut\lib\ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\SIM\MotorFisicaV2\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\SIM\MotorFisicaV2\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\ArbolCono1.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\hlocal\3 GDV\1 CUATRIMESTRE\SIM\Proyecto\MotorFisicaV2\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\hlocal\3 GDV\1 CUATRIMESTRE\SIM\Proyecto\MotorFisicaV2\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\hlocal\3 GDV\1 CUATRIMESTRE\SIM\Proyecto\MotorFisicaV2\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\hlocal\3 GDV\1 CUATRIMESTRE\SIM\Proyecto\MotorFisicaV2\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\ArbolCono1.obj
          Debug\ArbolCono2.obj
          Debug\ArbolEsfera1.obj
          Debug\ArbolEsfera2.obj
@@ -39,9 +41,9 @@
          Debug\Test1.obj
          Debug\VerticeNormal.obj
          Debug\World.obj
-         freeglut project 3D.vcxproj -> C:\hlocal\SIM\MotorFisicaV2\Debug\freeglut project 3D.exe
-     1>Done Building Project "C:\hlocal\SIM\MotorFisicaV2\freeglut project 3D\freeglut project 3D.vcxproj" (Build target(s)).
+         freeglut project 3D.vcxproj -> D:\hlocal\3 GDV\1 CUATRIMESTRE\SIM\Proyecto\MotorFisicaV2\Debug\freeglut project 3D.exe
+     1>Compilación del proyecto terminada "D:\hlocal\3 GDV\1 CUATRIMESTRE\SIM\Proyecto\MotorFisicaV2\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
 
-Build succeeded.
+Compilación correcta.
 
-Time Elapsed 00:00:00.93
+Tiempo transcurrido 00:00:00.87

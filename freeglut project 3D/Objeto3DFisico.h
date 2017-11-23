@@ -10,31 +10,31 @@ public:
 	Objeto3DFisico();
 	~Objeto3DFisico();
 	//Particles
-	void setPos(PuntoVector3D aux){ pos = aux; }
-	void setVel(PuntoVector3D aux){ vel = aux; }
+	void setPos(PuntoVector3D aux){ pos_ = aux; }
+	void setVel(PuntoVector3D aux){ vel_ = aux; }
 
 	void setDestroy(bool b) { _eliminar = b; }
 	bool getDestroy() { return _eliminar; }
 
 	//ParticleRainSystem
-	void setColor(PuntoVector3D aux){ color = aux; }
-	GLfloat getLifeAct() { return lifeAct; };
-	GLfloat getLife() { return life; };
-	void setWorld(World* worlde) { world = worlde; }
+	void setColor(PuntoVector3D aux){ color_ = aux; }
+	GLfloat getLifeAct() { return lifeAct_; };
+	GLfloat getLife() { return life_; };
+	void setWorld(World* world) { world_ = world; }
 
 	virtual void update(GLfloat dt) {};
 
 protected:
-	GLfloat life;
-	GLfloat lifeAct;
+	GLfloat life_;
+	GLfloat lifeAct_;
 
-	int size;
-	PuntoVector3D pos;
-	PuntoVector3D vel;
-	PuntoVector3D acc;
-	PuntoVector3D color;
+	int size_;
+	PuntoVector3D pos_;
+	PuntoVector3D vel_;
+	PuntoVector3D acc_;
+	PuntoVector3D color_;
 
-	World* world;
+	World* world_;
 	bool _eliminar = false;
 };
 #endif
