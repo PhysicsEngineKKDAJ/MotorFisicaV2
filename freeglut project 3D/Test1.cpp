@@ -1,11 +1,11 @@
 #include "Test1.h"
 
-#include "ParticleRainSystem"
+#include "ParticleRainSystem.h"
 
 Test1::Test1()
 {
 	world_ = new World();
-	lluviaP = new LLuviaParticulas();
+	lluviaP = new ParticleRainSystem();
 	lluviaP->setWorld(world_);
 }
 
@@ -19,18 +19,15 @@ void Test1::dibuja() {
 	bool update = false;
 	lluviaP->dibuja();
 
-	if (update || lastTimeUpdate + frecuencia <= ticks) {
+	if (update || lastTimeUpdate + frecuencia <= ticks) 
 		lluviaP->update(ticks);
-
-
-	}
 }
 
-Objeto3D* Test1::creaParticula()
+Particles* Test1::creaParticula()
 {
-	Objeto3D* p = new particulas(PuntoVector3D(0, 1, 0, 0));
-	p->setColor(PuntoVector3D(world_->dameRandom(1, 0.5), world_->dameRandom(0.5, 0), 0, 0));
-	p->setVel(PuntoVector3D(world_->dameRandom(50, -50), 50, world_->dameRandom(50, -50), 1));
+	Particles* p = new Particles(&PuntoVector3D(0, 1, 0, 0));
+	p->setColor(&PuntoVector3D(world_->getNumRandom(1, 0.5), world_->getNumRandom(0.5, 0), 0, 0));
+	p->setVel(&PuntoVector3D(world_->getNumRandom(50, -50), 50, world_->getNumRandom(50, -50), 1));
 	p->setWorld(world_);
 	return p;
 }

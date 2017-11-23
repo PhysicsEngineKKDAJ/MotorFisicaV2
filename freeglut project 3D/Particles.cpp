@@ -8,7 +8,7 @@
 #define TOP_DEADZONE 200
 #define BOTTOM_DEADZONE 0
 
-Particles::Particles(PuntoVector3D* p, GLfloat gravedad, GLfloat maxVida, GLfloat minVida)
+Particles::Particles(PuntoVector3D* p, GLfloat gravedad, GLfloat maxVida, GLfloat minVida) :Objeto3DFisico()
 {
 	pos = p;
 	posInicial = pos;

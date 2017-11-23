@@ -1,12 +1,12 @@
 #ifndef _ParticleRainSystem_H_
 #define _ParticleRainSystem_H_
 
-#include "Objeto3D.h"
+#include "Objeto3DFisico.h"
 #include <vector>
 #include "Particles.h"
 
 class ParticleRainSystem :
-	public Objeto3D
+	public Objeto3DFisico
 {
 public:
 	ParticleRainSystem();

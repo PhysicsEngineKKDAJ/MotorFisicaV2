@@ -102,7 +102,7 @@ void display(void) {
 }
 
 void resize(int newWidth, int newHeight) {
-	escena->resize(newWidth,newHeight);
+	//escena->resize(newWidth,newHeight);
 }
 
 void key(unsigned char key, int x, int y){
