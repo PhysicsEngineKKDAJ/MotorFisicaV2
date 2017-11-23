@@ -12,14 +12,12 @@ World::~World()
 	delete gravity;
 }
 
-PuntoVector3D* World::getRandomVector(GLfloat magnitud) {
-	GLfloat phi = getNumRandom(3.1415f, 0.0f);
-	GLfloat cosTheta = getNumRandom(1, -1);
-
-	GLfloat theta = acosf(cosTheta);
-	GLfloat x = sinf(theta)*cosf(phi), y = sinf(theta)*sinf(phi), z = cosf(theta);
-	PuntoVector3D *v = new PuntoVector3D(x,y,z,1);
-	PuntoVector3D* aux = new PuntoVector3D(magnitud, magnitud, magnitud, 1);
+PuntoVector3D* World::getRandomPoint(GLfloat magnitud) {
+	GLfloat pi = getRandomNum(0.0f, PI);
+	// De 0 a 180 grados en radianes
+	GLfloat theta = acos(getRandomNum(-1, 1));				// sin (theta * pi)
+	PuntoVector3D *v = new PuntoVector3D(sin(theta)*cos(pi), sin(theta)*sin(pi), cos(theta), 1);
+	PuntoVector3D *aux = new PuntoVector3D(magnitud, magnitud, magnitud, 1);
 	v->productoEscalar(aux);
 	delete aux;
 	return v;

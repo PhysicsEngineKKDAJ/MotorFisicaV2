@@ -9,15 +9,15 @@ class Test1
 public:
 	Test1();
 	~Test1();
-	void creaParticulas(int num);
-	void dibuja();
+	void createParticles(int num);
+	void draw();
 private:
-	Particles* creaParticula();
+	Particles* createParticle();
 	GLfloat lastTimeUpdate = 0;
-	GLfloat frecuencia = 10;
+	GLfloat frequency = 10;
 	World* world_;
-	Objeto3DFisico * lluviaP;
-	int numParticulas;
+	Objeto3DFisico * rainP;
+	int numParticles;
 };
 #endif
 

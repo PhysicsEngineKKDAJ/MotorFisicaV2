@@ -4,7 +4,8 @@
 #include "PuntoVector3D.h"
 #include <math.h>
 
-#define GRAVITY -9.81f
+#define GRAVITY -9.81f // Creo que en videojuegos es 10
+#define PI 3.1415f
 class World
 {
 public:
@@ -12,11 +13,16 @@ public:
 	~World();
 
 	virtual PuntoVector3D*  getGravity(){ return gravity; };
-	GLfloat getNumRandom(GLfloat max, GLfloat min) 
+	GLfloat getRandomNum(GLfloat min, GLfloat max) // igual que el random de la practica de IG II 
 	{
 		return min + static_cast <GLfloat> (rand()) / (static_cast <GLfloat> (RAND_MAX / (max - min)));
 	}
-	PuntoVector3D*  getRandomVector(GLfloat magnitud);
+
+	// Metodo que nos devuelve un punto aleatorio 
+	// a partir de una direccion aleatoria que se define
+	// dentro.
+	PuntoVector3D*  getRandomPoint(GLfloat magnitud);
+
 private:
 	PuntoVector3D*  gravity;
 };
