@@ -25,9 +25,9 @@ void Test1::dibuja() {
 
 Particles* Test1::creaParticula()
 {
-	Particles* p = new Particles(&PuntoVector3D(0, 1, 0, 0));
-	p->setColor(&PuntoVector3D(world_->getNumRandom(1, 0.5), world_->getNumRandom(0.5, 0), 0, 0));
-	p->setVel(&PuntoVector3D(world_->getNumRandom(50, -50), 50, world_->getNumRandom(50, -50), 1));
+	Particles* p = new Particles(PuntoVector3D(0, 1, 0, 0));
+	p->setColor(PuntoVector3D(world_->getNumRandom(1, 0.5), world_->getNumRandom(0.5, 0), 0, 0));
+	p->setVel(PuntoVector3D(world_->getNumRandom(50, -50), 50, world_->getNumRandom(50, -50), 1));
 	p->setWorld(world_);
 	return p;
 }

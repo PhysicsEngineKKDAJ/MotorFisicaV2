@@ -70,7 +70,6 @@
     <ClCompile Include="ArbolCono2.cpp" />
     <ClCompile Include="ArbolEsfera1.cpp" />
     <ClCompile Include="ArbolEsfera2.cpp" />
-    <ClCompile Include="Camara.cpp" />
     <ClCompile Include="Cara.cpp" />
     <ClCompile Include="Cilindro.cpp" />
     <ClCompile Include="Coche.cpp" />
@@ -108,7 +107,6 @@
     <ClInclude Include="ArbolCono2.h" />
     <ClInclude Include="ArbolEsfera1.h" />
     <ClInclude Include="ArbolEsfera2.h" />
-    <ClInclude Include="Camara.h" />
     <ClInclude Include="Cara.h" />
     <ClInclude Include="Cilindro.h" />
     <ClInclude Include="Coche.h" />

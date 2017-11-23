@@ -105,9 +105,6 @@
     <ClCompile Include="Hipotrocoide.cpp">
       <Filter>Source Files\IG1\Objetos</Filter>
     </ClCompile>
-    <ClCompile Include="Camara.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TAfin.cpp">
       <Filter>Source Files\Objeto3D</Filter>
     </ClCompile>
@@ -211,9 +208,6 @@
     </ClInclude>
     <ClInclude Include="Hipotrocoide.h">
       <Filter>Header Files\IG 1\Objetos</Filter>
-    </ClInclude>
-    <ClInclude Include="Camara.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TAfin.h">
       <Filter>Header Files\Objeto3D</Filter>

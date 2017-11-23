@@ -8,20 +8,62 @@
 #include "Escena.h"
 #include "Test1.h"
 #include <iostream>
+#include <ctime>
+
 using namespace std;
 
 // Freeglut parameters
 // Flag telling us to keep processing events
 // bool continue_in_main_loop= true; //(**)
+// Viewing frustum parameters
+GLdouble xRight = 10, xLeft = -xRight, yTop = 250, yBot = -30, N = 1, F = 2000;
+
+// Camera parameters
+GLdouble eyeX = 1000.0, eyeY = 100, eyeZ = 1500.0;
+GLdouble lookX = 0.0, lookY = 10, lookZ = 0.0;
+GLdouble upX = 0, upY = 1, upZ = 0;
 
 
 Escena* escena;
 Test1 test1;
-
 int contEscena;
+GLfloat angX, angY, angZ;
 
+int WIDTH = 500, HEIGHT = 500;
+
+void dibujaEjes(){
+
+	glLineWidth(1.5f);
+	// Drawing axes
+	glBegin(GL_LINES);
+	glColor3f(1.0, 0.0, 0.0);
+	glVertex3f(0, 0, 0);
+	glVertex3f(200, 0, 0);
+
+	glColor3f(0.0, 1.0, 0.0);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 200, 0);
+
+	glColor3f(0.0, 0.0, 1.0);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 0, 200);
+	glEnd();
+
+}
+
+
+void rotaEscena(){
+	// Rotating the scene
+	glRotatef(angX, 1.0f, 0.0f, 0.0f);
+	glRotatef(angY, 0.0f, 1.0f, 0.0f);
+	glRotatef(angZ, 0.0f, 0.0f, 1.0f);
+
+}
 void buildSceneObjects() {	 
 	//escena = new Escena(4000);
+	angX = 0.0f;
+	angY = 0.0f;
+	angZ = 0.0f;
 	contEscena = 0;
 }
 
@@ -35,6 +77,8 @@ void initGL() {
 
 	//Define el modelo de sombreado: GL_FLAT / GL_SMOOTH (suave)
 	glShadeModel(GL_SMOOTH); // Shading by default
+
+	
 
 	buildSceneObjects();
 
@@ -54,6 +98,19 @@ void initGL() {
 	GLfloat p[]={25.0f, 25.0f, 25.0f, 1.0f};	 
 	glLightfv(GL_LIGHT0, GL_POSITION, p);//Define la posicion de una fuente de luz. ultimo parámetro: 1 local, 0 direccional
 	
+	// Camera set up
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	gluLookAt(eyeX, eyeY, eyeZ, lookX, lookY, lookZ, upX, upY, upZ);
+
+	// Frustum set up
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glFrustum(xLeft, xRight, yBot, yTop, N, F);
+	//glOrtho(xLeft, xRight, yBot, yTop, N, F);
+
+	// Viewport set up
+	glViewport(0, 0, WIDTH, HEIGHT);
 
 	//NO ESTÁ EN EL ESQUELETO
 	//GLfloat amb[] = { 0.0, 0.0, 0.0, 1.0 };
@@ -86,6 +143,9 @@ void display(void) {
 
 	glPushMatrix();
 	
+	rotaEscena();
+
+	dibujaEjes();
 	switch (contEscena)
 	{
 	case 0: test1.dibuja(); break;
@@ -99,10 +159,35 @@ void display(void) {
  
 	glFlush();
 	glutSwapBuffers();
+
+	glutPostRedisplay();
 }
 
 void resize(int newWidth, int newHeight) {
-	//escena->resize(newWidth,newHeight);
+	WIDTH = newWidth;
+	HEIGHT = newHeight;
+	GLdouble RatioViewPort = (float)WIDTH / (float)HEIGHT;
+	glViewport(0, 0, WIDTH, HEIGHT);
+
+	GLdouble SVAWidth = xRight - xLeft;
+	GLdouble SVAHeight = yTop - yBot;
+	GLdouble SVARatio = SVAWidth / SVAHeight;
+	if (SVARatio >= RatioViewPort) {
+		GLdouble newHeight = SVAWidth / RatioViewPort;
+		GLdouble yMiddle = (yBot + yTop) / 2.0;
+		yTop = yMiddle + newHeight / 2.0;
+		yBot = yMiddle - newHeight / 2.0;
+	}
+	else {
+		GLdouble newWidth = SVAHeight*RatioViewPort;
+		GLdouble xMiddle = (xLeft + xRight) / 2.0;
+		xRight = xMiddle + newWidth / 2.0;
+		xLeft = xMiddle - newWidth / 2.0;
+	}
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(xLeft, xRight, yBot, yTop, N, F);
 }
 
 void key(unsigned char key, int x, int y){
@@ -113,27 +198,25 @@ void key(unsigned char key, int x, int y){
 			//Freeglut's sentence for stopping glut's main loop (*)
 			glutLeaveMainLoop (); 
 			break;		 
-		case 'f': escena->setAngX(escena->getAngX() + 5.0f); break;
-		case 'z': escena->setAngX(escena->getAngX() - 5.0f); break;
-		case 'v': escena->setAngY(escena->getAngY() + 5.0f); break;
-		case 'x': escena->setAngY(escena->getAngY() - 5.0f); break;
-		case 'd': escena->setAngZ(escena->getAngZ() + 5.0f); break;
-		case 'c': escena->setAngZ(escena->getAngZ() - 5.0f); break;
-		case 'q': escena->moverCoche(ArribaIz); break;
-		case 'w': escena->moverCoche(ArribaDe); break;
-		case 'a': escena->moverCoche(AbajoIz); break;
-		case 's': escena->moverCoche(AbajoDe); break;
-		case 't': escena->cambiarModo(); break;
+		case 'f': angX+= 5.0f; break;
+		case 'z': angX -= 5.0f; break; break;
+		case 'v':  angY += 5.0f; break; break;
+		case 'x':  angY -= 5.0f; break; break;
+		case 'd':  angZ += 5.0f; break; break;
+		case 'c': angZ -= 5.0f;  break;
+	//	case 'q': escena->moverCoche(ArribaIz); break;
+		//case 'w': escena->moverCoche(ArribaDe); break;
+		//case 'a': escena->moverCoche(AbajoIz); break;
+		//case 's': escena->moverCoche(AbajoDe); break;
+		//case 't': escena->cambiarModo(); break;
 
 		case '3': contEscena++; contEscena %= 5; break;//Rota la cámara alrededor del ejeX
 
-		case '1': escena->giraX(5); break;//Rota la cámara alrededor del ejeX
-		case '2':escena->roll(15); break; //Debería ser q //Rota la cámara con respecto al eje n de la cámara
 		//case 'h': glEnable(GL_LIGHT0); break;
 		//case 'n': glDisable(GL_LIGHT0); break;
-		default:
+		/*default:
 			need_redisplay = false;
-			break;
+			break;*/
 	}
 
 	if (need_redisplay)
@@ -142,6 +225,7 @@ void key(unsigned char key, int x, int y){
 
 int main(int argc, char *argv[]){
 	cout<< "Starting console..." << endl;
+	srand(static_cast <unsigned> (time(0)));
 
 	int my_window; // my window's identifier
 

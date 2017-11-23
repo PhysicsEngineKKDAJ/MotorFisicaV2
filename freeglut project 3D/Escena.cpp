@@ -9,20 +9,8 @@
 
 
 
-Escena::Escena(int n) : numArboles (n),ObjetoCompuesto(n), angX(0.0f), angY(0.0f), angZ(0.0f)
+Escena::Escena(int n) : numArboles (n),ObjetoCompuesto(n)
 {
-	//------------Cámara--------------
-	camera = new Camara(WIDTH, HEIGHT);
-
-	camera->setPos();
-
-	// Scene visible area and projection  
-	camera->setVV();
-
-	// Viewport set up
-	glViewport(0, 0, WIDTH, HEIGHT);
-	//------------Cámara--------------
-
 	isCulled = true;
 
 	srand(time(NULL));
@@ -84,7 +72,6 @@ Escena::Escena(int n) : numArboles (n),ObjetoCompuesto(n), angX(0.0f), angY(0.0f
 
 Escena::~Escena()
 {
-	delete camera;
 }
 
 bool Escena::colisionCocheArbol(Objeto3D* arbol)
@@ -100,10 +87,6 @@ void Escena::dibuja(){
 	glMatrixMode(GL_MODELVIEW);
 
 	glPushMatrix();
-	
-	rotaEscena();
-
-	dibujaEjes();
 
 	glEnable(GL_CULL_FACE);
 
@@ -122,6 +105,7 @@ void Escena::dibuja(){
 
 	}
 	else{
+		/*
 		int x1, z1, x3, z3;
 		//AbajoIzquierda
 		x1 = camera->eye->getX() + camera->xLeft;
@@ -130,41 +114,14 @@ void Escena::dibuja(){
 		//ArribaDerecha
 		x3 = camera->eye->getX() + camera->xRight;
 		z3 = camera->eye->getZ() + camera->yTop;
+		
 
 		treeQuadtree->drawTrees(x1, z1, x3, z3);
+		*/
 	}
 	glDisable(GL_CULL_FACE);
 
 	glPopMatrix();
-
-}
-
-void Escena::dibujaEjes(){
-
-	glLineWidth(1.5f);
-	// Drawing axes
-	glBegin(GL_LINES);
-	glColor3f(1.0, 0.0, 0.0);
-	glVertex3f(0, 0, 0);
-	glVertex3f(20, 0, 0);
-
-	glColor3f(0.0, 1.0, 0.0);
-	glVertex3f(0, 0, 0);
-	glVertex3f(0, 20, 0);
-
-	glColor3f(0.0, 0.0, 1.0);
-	glVertex3f(0, 0, 0);
-	glVertex3f(0, 0, 20);
-	glEnd();
-
-
-}
-
-void Escena::rotaEscena(){
-	// Rotating the scene
-	glRotatef(angX, 1.0f, 0.0f, 0.0f);
-	glRotatef(angY, 0.0f, 1.0f, 0.0f);
-	glRotatef(angZ, 0.0f, 0.0f, 1.0f);
 
 }
 
@@ -202,7 +159,7 @@ void Escena::moverCoche(movCoche avanza)
 		hijos[0]->traslada(curva);
 
 		GLfloat* mCochecito = hijos[0]->getmT()->getM();
-		camera->setEye(hijos[0]->getmT()->getM()[12], hijos[0]->getmT()->getM()[14]);
+		//camera->setEye(hijos[0]->getmT()->getM()[12], hijos[0]->getmT()->getM()[14]);
 
 		delete curva;
 
@@ -216,12 +173,4 @@ void Escena::moverCoche(movCoche avanza)
 		}
 
 	}
-}
-
-void Escena::resize(int newWidth, int newHeight) {
-	WIDTH = newWidth;
-	HEIGHT = newHeight;
-	glViewport(0, 0, WIDTH, HEIGHT);
-
-	camera->setVV(WIDTH, HEIGHT);
 }
