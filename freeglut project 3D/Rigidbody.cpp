@@ -3,16 +3,16 @@
 #define BOTTOM_DEADZONE 0
 #define TOP_DEADZONE 1000
 
-Rigidbody::Rigidbody(PuntoVector3D pos, GLfloat gravedad)
+Rigidbody::Rigidbody(PuntoVector3D pos, GLfloat accY)
 {
 	pos_ = pos;
 	posInicial = pos;
-	acc_ = PuntoVector3D(0, -90, 0, 1);
+	acc_ = PuntoVector3D(0, -accY, 0, 1);
 	segundos_ = glutGet(GLUT_ELAPSED_TIME);
 
-	gravedad_ = gravedad;
+	gravedad_ = GRAVITY;
 	size_ = 1;
-	cubo = new Cubo(10, Color{ 1.0,1.0, 1.0 });
+	cubo = new Cubo(10, Color{ 1.0, 0.4, 1.0 });
 }
 
 

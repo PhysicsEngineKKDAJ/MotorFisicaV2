@@ -10,13 +10,12 @@ class RigidbodySpawn :public Objeto3DFisico
 public:
 	RigidbodySpawn();
 	~RigidbodySpawn();
-	virtual void dibuja() {
-		for (auto &p : vectorRigidBody) {
-			p->dibuja();
-		}
-	};
+	virtual void dibuja();
 	virtual void update(GLfloat dt);
-	Rigidbody * createSolid(int);
+
+	void replicaCubos();
+
+	Rigidbody * createSolid(PuntoVector3D, int, GLfloat);
 private:
 	std::vector<Rigidbody*> vectorRigidBody;
 };
