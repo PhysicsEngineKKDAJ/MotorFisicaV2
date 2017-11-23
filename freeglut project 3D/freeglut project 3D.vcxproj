@@ -88,6 +88,7 @@
     <ClCompile Include="Hipotrocoide.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Malla.cpp" />
+    <ClCompile Include="MassCenter.cpp" />
     <ClCompile Include="Objeto3DFisico.cpp" />
     <ClCompile Include="ObjetoCompuesto.cpp" />
     <ClCompile Include="ObjetoCuadrico.cpp" />
@@ -96,9 +97,12 @@
     <ClCompile Include="PuntoVector3D.cpp" />
     <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="QuadtreeNode.cpp" />
+    <ClCompile Include="Rigidbody.cpp" />
+    <ClCompile Include="RigidbodySpawn.cpp" />
     <ClCompile Include="Rueda.cpp" />
     <ClCompile Include="TAfin.cpp" />
     <ClCompile Include="Test1.cpp" />
+    <ClCompile Include="TestRB1.cpp" />
     <ClCompile Include="VerticeNormal.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -124,6 +128,7 @@
     <ClInclude Include="FalsoTetraedro.h" />
     <ClInclude Include="Hipotrocoide.h" />
     <ClInclude Include="Malla.h" />
+    <ClInclude Include="MassCenter.h" />
     <ClInclude Include="Objeto3D.h" />
     <ClInclude Include="Objeto3DFisico.h" />
     <ClInclude Include="ObjetoCompuesto.h" />
@@ -133,9 +138,12 @@
     <ClInclude Include="PuntoVector3D.h" />
     <ClInclude Include="QuadTree.h" />
     <ClInclude Include="QuadtreeNode.h" />
+    <ClInclude Include="Rigidbody.h" />
+    <ClInclude Include="RigidbodySpawn.h" />
     <ClInclude Include="Rueda.h" />
     <ClInclude Include="TAfin.h" />
     <ClInclude Include="Test1.h" />
+    <ClInclude Include="TestRB1.h" />
     <ClInclude Include="VerticeNormal.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>

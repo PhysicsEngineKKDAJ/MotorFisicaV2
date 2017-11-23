@@ -27,7 +27,7 @@ public:
 	inline bool esVisible() const { return visible; };
 	inline void setInvisible() { visible = false; };
 	inline TAfin* getmT() const { return mT; };
-
+	inline void posiciona(GLfloat doce, GLfloat trece, GLfloat catorce){ mT->posiciona(doce,trece,catorce); };
 	virtual void dibuja() = 0;
 
 protected:

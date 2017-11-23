@@ -32,6 +32,7 @@ void Particles::dibuja() {
 		glColor4f(color_.getX(), color_.getY(), color_.getZ(), color_.getA());
 		//std::cout << vidaAct / vida << " !- - - - -! "<< (int)(color.getA() * 10) / 10.0 <<  " Cual es la puta diferencia" << "\n";//descomentar si quieres una bomba nucelar
 		glutSolidSphere(size_, 5, 5);
+
 		glPopMatrix();
 	}
 }

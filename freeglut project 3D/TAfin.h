@@ -16,10 +16,12 @@ public:
 	void traslada(PuntoVector3D * v);
 	void rota(GLfloat a, GLfloat x, GLfloat y, GLfloat z);//En sentido antihorario
 	void escala(PuntoVector3D * v);
+	void reset();
 
 	void postMultiplica(GLfloat* m1);
 
 	inline GLfloat * getM() const { return m; };
+	inline void posiciona(GLfloat doce, GLfloat trece, GLfloat catorce){ m[12] = doce; m[13] = trece; m[14] = catorce; };
 
 private:
 	GLfloat *m; //Matriz: Enumerados por columnas
