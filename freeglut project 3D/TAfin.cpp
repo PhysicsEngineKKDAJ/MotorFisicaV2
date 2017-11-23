@@ -12,8 +12,14 @@ TAfin::TAfin()
 }
 
 
+
 TAfin::~TAfin()
 {
+}
+
+void TAfin::reset(){
+	for (int i = 0; i < 16; i++) m[i] = 0;
+	m[0] = m[5] = m[10] = m[15] = 1;
 }
 
 void TAfin::traslada(PuntoVector3D* v) {
@@ -21,7 +27,8 @@ void TAfin::traslada(PuntoVector3D* v) {
 	glPushMatrix();
 	glLoadIdentity();
 	//post-multiplica la matriz de modelado-vista por la matriz de traslación asociada al vector determinado por los tres parámetros.
-	glTranslatef(v->getX(), v->getY(),v->getZ());
+	glTranslatef(v->getX(), v->getY(),v->getZ());
+
 	GLfloat m1[16];
 	//Dejar la matriz actual de modelado-vista en m1
 	//Los 16 datos están enumerados por columnas //esta hecho

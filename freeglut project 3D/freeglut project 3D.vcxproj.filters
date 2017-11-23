@@ -85,6 +85,12 @@
     <Filter Include="Source Files\Test">
       <UniqueIdentifier>{e523f2eb-0b8f-4a56-a53b-54c7f19e7db5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Rigidbody">
+      <UniqueIdentifier>{346e9f51-671d-4105-80af-19bc4b28b1e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rigidbody">
+      <UniqueIdentifier>{12abc2c7-fe07-4c5c-b0bb-1cd3c28c6de7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -192,6 +198,18 @@
     <ClCompile Include="Objeto3DFisico.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MassCenter.cpp">
+      <Filter>Source Files\Rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="Rigidbody.cpp">
+      <Filter>Source Files\Rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidbodySpawn.cpp">
+      <Filter>Source Files\Rigidbody</Filter>
+    </ClCompile>
+    <ClCompile Include="TestRB1.cpp">
+      <Filter>Source Files\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PuntoVector3D.h">
@@ -298,6 +316,18 @@
     </ClInclude>
     <ClInclude Include="Objeto3DFisico.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MassCenter.h">
+      <Filter>Header Files\Rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="Rigidbody.h">
+      <Filter>Header Files\Rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidbodySpawn.h">
+      <Filter>Header Files\Rigidbody</Filter>
+    </ClInclude>
+    <ClInclude Include="TestRB1.h">
+      <Filter>Header Files\Test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

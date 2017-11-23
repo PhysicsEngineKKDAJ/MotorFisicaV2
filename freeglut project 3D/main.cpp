@@ -7,6 +7,8 @@
 
 #include "Escena.h"
 #include "Test1.h"
+#include "TestRB1.h"
+
 #include <iostream>
 #include <ctime>
 
@@ -26,6 +28,8 @@ GLdouble upX = 0, upY = 1, upZ = 0;
 
 Escena* escena;
 Test1 test1;
+TestRB1 testRB1;
+
 int contEscena;
 GLfloat angX, angY, angZ;
 
@@ -149,6 +153,8 @@ void display(void) {
 	switch (contEscena)
 	{
 	case 0: test1.dibuja(); break;
+	case 1: testRB1.dibuja(); break;
+
 	default:
 		break;
 
@@ -210,7 +216,7 @@ void key(unsigned char key, int x, int y){
 		//case 's': escena->moverCoche(AbajoDe); break;
 		//case 't': escena->cambiarModo(); break;
 
-		case '3': contEscena++; contEscena %= 5; break;//Rota la cámara alrededor del ejeX
+		case '3': contEscena++; contEscena %= 2; break;//Rota la cámara alrededor del ejeX
 
 		//case 'h': glEnable(GL_LIGHT0); break;
 		//case 'n': glDisable(GL_LIGHT0); break;
