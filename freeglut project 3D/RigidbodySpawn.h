@@ -11,13 +11,13 @@ public:
 	RigidbodySpawn();
 	~RigidbodySpawn();
 	virtual void dibuja() {
-		for (auto &p : Vector) {
+		for (auto &p : vectorRigidBody) {
 			p->dibuja();
 		}
 	};
 	virtual void update(GLfloat dt);
-	Rigidbody *creaParticula();
+	Rigidbody * createSolid(int);
 private:
-	std::vector<Rigidbody*> Vector;
+	std::vector<Rigidbody*> vectorRigidBody;
 };
 #endif

@@ -1,5 +1,4 @@
-﻿Build started 23/11/2017 20:50:33.
-
-Build succeeded.
-
-Time Elapsed 00:00:00.03
+﻿  RigidbodySpawn.cpp
+c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbody.h(17): warning C4244: '=' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbodyspawn.cpp(36): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
+  freeglut project 3D.vcxproj -> C:\Users\User\Desktop\Sim\MotorFisicaV2\Debug\freeglut project 3D.exe
