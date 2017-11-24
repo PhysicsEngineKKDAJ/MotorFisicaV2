@@ -17,10 +17,9 @@ public:
 	bool getDestroy() { return _eliminar; }
 
 	//ParticleRainSystem
-	void setColor(PuntoVector3D aux){ color_ = aux; }
+	void setColor(Color aux){ color_ = aux; }
 	GLfloat getLifeAct() { return lifeAct_; };
 	GLfloat getLife() { return life_; };
-	void setWorld(World* world) { world_ = world; }
 
 	virtual void update(GLfloat dt) {};
 
@@ -32,7 +31,7 @@ protected:
 	PuntoVector3D pos_;
 	PuntoVector3D vel_;
 	PuntoVector3D acc_;
-	PuntoVector3D color_;
+	Color color_;
 
 	World* world_;
 	bool _eliminar = false;

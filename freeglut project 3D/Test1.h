@@ -2,22 +2,23 @@
 #define _H_Test1_H_
 
 #include "World.h"
-#include "Particles.h"
+#include "Objeto3DFisico.h"
 
 class Test1
 {
 public:
 	Test1();
 	~Test1();
-	void createParticles(int num);
-	void draw();
+
+	void dibuja();
+
 private:
-	Particles* createParticle();
-	GLfloat lastTimeUpdate = 0;
-	GLfloat frequency = 10;
+	GLfloat lastTimeUpdate, frequency;
+
+	Objeto3DFisico * rainParticles1;
+	Objeto3DFisico * rainParticles2;
+
 	World* world_;
-	Objeto3DFisico * rainP;
-	int numParticles;
 };
 #endif
 

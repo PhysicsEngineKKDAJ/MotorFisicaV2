@@ -1,18 +1,21 @@
-#include <vector>
-#include "Particles.h"
+#ifndef _TestRB1_H_
+#define _TestRB1_H_
+
 #include "world.h"
+#include "Objeto3DFisico.h"
 class TestRB1
 {
 public:
 	TestRB1();
 	~TestRB1();
-	void dibuja();
-private:
 
-	GLfloat lastTimeUpdate = 0;
-	GLfloat frecuencia = 10;
+	void dibuja();
+
+private:
+	GLfloat lastTimeUpdate, frecuency;
+
+	Objeto3DFisico* spawn;
+
 	World* world_;
-	Objeto3DFisico * fuente;
-	Objeto3DFisico** objetos;
-	int numParticulas;
 };
+#endif

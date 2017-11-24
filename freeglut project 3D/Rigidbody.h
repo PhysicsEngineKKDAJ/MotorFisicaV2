@@ -6,7 +6,7 @@
 class Rigidbody : public Objeto3DFisico
 {
 public:
-	Rigidbody(PuntoVector3D pos_, GLfloat, PuntoVector3D color_);
+	Rigidbody(World *world, PuntoVector3D pos, GLfloat accY, Color color);
 	~Rigidbody();
 	virtual	void dibuja();											//Dibuja un rigid body
 	virtual void update(GLfloat dt);								//Update del rigid body

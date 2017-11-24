@@ -1,25 +1,23 @@
 #include "TestRB1.h"
 #include "RigidbodySpawn.h"
 
-TestRB1::TestRB1()
+TestRB1::TestRB1() : lastTimeUpdate(0), frecuency(10)
 {
 	world_ = new World();
-	fuente = new RigidbodySpawn();
-	fuente->setWorld(world_);
+	spawn = new RigidbodySpawn(world_);
 }
 
 
 TestRB1::~TestRB1()
 {
+	delete world_;
+	delete spawn;
 }
+
 void TestRB1::dibuja() {
 	GLfloat ticks = glutGet(GLUT_ELAPSED_TIME);
-	bool update = false;
-	fuente->dibuja();
+	spawn->dibuja();
 
-	if (update || lastTimeUpdate + frecuencia <= ticks) {
-		fuente->update(ticks);
-
-
-	}
+	if (lastTimeUpdate + frecuency <= ticks) 
+		spawn->update(ticks);
 }

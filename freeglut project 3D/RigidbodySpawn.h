@@ -8,14 +8,14 @@
 class RigidbodySpawn :public Objeto3DFisico
 {
 public:
-	RigidbodySpawn();
+	RigidbodySpawn(World* world);
 	~RigidbodySpawn();
 	virtual void dibuja();
 	virtual void update(GLfloat dt);
 
 	void replicaCubos();
 
-	Rigidbody * createSolid(PuntoVector3D, int, GLfloat, PuntoVector3D );
+	Rigidbody * createSolid(PuntoVector3D pos, int rbMass, GLfloat accY, Color newColour);
 private:
 	std::vector<Rigidbody*> vectorRigidBody;
 };

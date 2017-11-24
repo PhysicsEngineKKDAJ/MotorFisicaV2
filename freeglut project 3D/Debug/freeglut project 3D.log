@@ -1,7 +1,55 @@
-﻿  RigidbodySpawn.cpp
-c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbody.h(17): warning C4244: '=' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbodyspawn.cpp(43): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbodyspawn.cpp(49): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbodyspawn.cpp(55): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbodyspawn.cpp(55): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-  freeglut project 3D.vcxproj -> C:\Users\User\Desktop\Sim\MotorFisicaV2\Debug\freeglut project 3D.exe
+﻿Compilación iniciada a las 24/11/2017 2:00:52.
+     1>Proyecto "D:\hlocal\aaaaaaaa\MotorFisicaV2\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
+     1>ClCompile:
+         D:\visual\VC\bin\CL.exe /c /ID:\hlocal\aaaaaaaa\MotorFisicaV2\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Rigidbody.cpp
+         Rigidbody.cpp
+     1>d:\hlocal\aaaaaaaa\motorfisicav2\freeglut project 3d\rigidbody.h(17): warning C4244: '=' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+     1>d:\hlocal\aaaaaaaa\motorfisicav2\freeglut project 3d\rigidbody.cpp(27): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
+     1>d:\hlocal\aaaaaaaa\motorfisicav2\freeglut project 3d\rigidbody.cpp(39): warning C4244: 'argumento' : conversión de 'GLfloat' a 'int'; posible pérdida de datos
+     1>d:\hlocal\aaaaaaaa\motorfisicav2\freeglut project 3d\rigidbody.cpp(50): warning C4244: 'argumento' : conversión de 'GLfloat' a 'int'; posible pérdida de datos
+       Link:
+         D:\visual\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\hlocal\aaaaaaaa\MotorFisicaV2\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\hlocal\aaaaaaaa\MotorFisicaV2\freeglut\lib\ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\hlocal\aaaaaaaa\MotorFisicaV2\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\hlocal\aaaaaaaa\MotorFisicaV2\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\ArbolCono1.obj
+         Debug\ArbolCono2.obj
+         Debug\ArbolEsfera1.obj
+         Debug\ArbolEsfera2.obj
+         Debug\Cara.obj
+         Debug\Cilindro.obj
+         Debug\Coche.obj
+         Debug\Cono.obj
+         Debug\CopaCono.obj
+         Debug\CopaDobleCono.obj
+         Debug\CopaDobleEsfera.obj
+         Debug\CopaEsfera.obj
+         Debug\Cubo.obj
+         Debug\CuboRevolucion.obj
+         Debug\Disco.obj
+         Debug\DiscoParcial.obj
+         Debug\Escena.obj
+         Debug\Esfera.obj
+         Debug\FalsoTetraedro.obj
+         Debug\Hipotrocoide.obj
+         Debug\main.obj
+         Debug\Malla.obj
+         Debug\MassCenter.obj
+         Debug\Objeto3DFisico.obj
+         Debug\ObjetoCompuesto.obj
+         Debug\ObjetoCuadrico.obj
+         Debug\ParticleRainSystem.obj
+         Debug\Particles.obj
+         Debug\PuntoVector3D.obj
+         Debug\QuadTree.obj
+         Debug\QuadtreeNode.obj
+         Debug\Rigidbody.obj
+         Debug\RigidbodySpawn.obj
+         Debug\Rueda.obj
+         Debug\TAfin.obj
+         Debug\Test1.obj
+         Debug\TestRB1.obj
+         Debug\VerticeNormal.obj
+         Debug\World.obj
+         freeglut project 3D.vcxproj -> D:\hlocal\aaaaaaaa\MotorFisicaV2\Debug\freeglut project 3D.exe
+     1>Compilación del proyecto terminada "D:\hlocal\aaaaaaaa\MotorFisicaV2\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:00.75

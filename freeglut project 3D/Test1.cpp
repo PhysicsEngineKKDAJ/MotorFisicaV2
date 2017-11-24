@@ -2,33 +2,28 @@
 
 #include "ParticleRainSystem.h"
 
-Test1::Test1()
+Test1::Test1() :lastTimeUpdate(0), frequency(10)
 {
 	world_ = new World();
-	rainP = new ParticleRainSystem();
-	rainP->setWorld(world_);
+	rainParticles1 = new ParticleRainSystem(world_,PuntoVector3D(100, 0, 0, 0));
+	rainParticles2 = new ParticleRainSystem(world_, PuntoVector3D(0, 0, 100, 0));
 }
 
 
 Test1::~Test1()
 {
+	delete rainParticles1;
+	delete rainParticles2;
 }
 
-void Test1::draw() {
+void Test1::dibuja() {
 	GLfloat ticks = glutGet(GLUT_ELAPSED_TIME);
-	bool update = false;
-	rainP->dibuja();
+	rainParticles1->dibuja();
+	rainParticles2->dibuja();
 
-	if (update || lastTimeUpdate + frequency <= ticks) 
-		rainP->update(ticks);
+	if (lastTimeUpdate + frequency <= ticks)
+	{
+		rainParticles1->update(ticks);
+		rainParticles2->update(ticks);
+	}
 }
-
-Particles* Test1::createParticle()
-{
-	Particles* p = new Particles(PuntoVector3D(0, 1, 0, 0));
-	p->setColor(PuntoVector3D(world_->getRandomNum(0.5, 1), world_->getRandomNum(0, 0.5), 0, 0));
-	p->setVel(PuntoVector3D(world_->getRandomNum(-50, 50), 50, world_->getRandomNum(-50, 50), 1));
-	p->setWorld(world_);
-	return p;
-}
-
