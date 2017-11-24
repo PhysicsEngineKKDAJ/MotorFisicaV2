@@ -11,14 +11,16 @@ muriendo a los pocos segundos.
 
 #include "Objeto3DFisico.h"
 #include "Particles.h"
+#include "World.h"
 
 class ParticleRainSystem :  public Objeto3DFisico
 {
 public:
-	ParticleRainSystem();
+	ParticleRainSystem(World* world, PuntoVector3D pos);
 	virtual ~ParticleRainSystem();
+
 	virtual void dibuja();							// Viene de Objeto3D. Dibuja el vector.
-	virtual void update(GLfloat);					//Update de las particulas: Determina su pos y vida.
+	virtual void update(GLfloat dt);					//Update de las particulas: Determina su pos y vida.
 
 	Particles *createParticle();					//Creadora dinámica de partículas
 

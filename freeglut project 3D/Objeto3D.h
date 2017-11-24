@@ -6,7 +6,10 @@ struct Color{
 	GLdouble r;
 	GLdouble g;
 	GLdouble b;
+	GLdouble a;
 };
+
+enum TColor{Rojo,Azul,Verde,Rosa,Blanco};
 
 //VIRTUAL PURA
 class Objeto3D

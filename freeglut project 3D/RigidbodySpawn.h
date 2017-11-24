@@ -8,7 +8,7 @@
 class RigidbodySpawn :public Objeto3DFisico
 {
 public:
-	RigidbodySpawn();
+	RigidbodySpawn(World* world);
 	~RigidbodySpawn();
 	virtual void dibuja();
 	virtual void update(GLfloat dt);

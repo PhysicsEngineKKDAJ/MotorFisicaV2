@@ -2,9 +2,9 @@
 #include "Rigidbody.h"
 #include "MassCenter.h"
 
-RigidbodySpawn::RigidbodySpawn()
+RigidbodySpawn::RigidbodySpawn(World* world)
 {
-	
+	world_ = world;
 
 	
 }
@@ -48,13 +48,12 @@ void RigidbodySpawn::dibuja(){
 
 Rigidbody* RigidbodySpawn::createSolid(PuntoVector3D pos, int rbMass, GLfloat accY)
 {
-	Rigidbody* rb = new Rigidbody(pos, accY);
+	Rigidbody* rb = new Rigidbody(world_, pos, accY);
 
-	rb->setColor(PuntoVector3D(1, 0.3, 0.6, 1));
+	rb->setColor(Color{ 1, 0.3, 0.6, 1 });
 	rb->setSize(10);
 	rb->setMass(rbMass);
 	rb->setVel(PuntoVector3D(10, 0, 0, 1));
 
-	rb->setWorld(world_);
 	return rb;
 }

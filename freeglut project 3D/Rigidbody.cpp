@@ -3,8 +3,9 @@
 #define BOTTOM_DEADZONE 0
 #define TOP_DEADZONE 1000
 
-Rigidbody::Rigidbody(PuntoVector3D pos, GLfloat accY)
+Rigidbody::Rigidbody(World *world,PuntoVector3D pos, GLfloat accY)
 {
+	world_ = world;
 	pos_ = pos;
 	posInicial = pos;
 	acc_ = PuntoVector3D(0, -accY, 0, 1);
@@ -22,7 +23,7 @@ Rigidbody::~Rigidbody()
 void Rigidbody::dibuja() {
 
 	glPushMatrix();
-	glColor4f(color_.getX(), color_.getY(), color_.getZ(), 1);
+	glColor4f(color_.r, color_.g, color_.b, color_.a);
 	cubo->dibuja();
 	glPopMatrix();
 

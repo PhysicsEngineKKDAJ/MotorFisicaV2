@@ -3,7 +3,7 @@
 
 Objeto3DFisico::Objeto3DFisico() : Objeto3D()
 {
-	color_ = PuntoVector3D(0, 0, 0.5, 0);
+	color_ = Color{ 0, 0, 0.5, 0 };
 }
 
 
