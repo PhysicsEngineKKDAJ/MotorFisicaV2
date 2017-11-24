@@ -15,7 +15,7 @@ public:
 
 	void replicaCubos();
 
-	Rigidbody * createSolid(PuntoVector3D, int, GLfloat);
+	Rigidbody * createSolid(PuntoVector3D, int, GLfloat, PuntoVector3D );
 private:
 	std::vector<Rigidbody*> vectorRigidBody;
 };

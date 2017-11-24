@@ -1,10 +1,7 @@
 ﻿  RigidbodySpawn.cpp
 c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbody.h(17): warning C4244: '=' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbodyspawn.cpp(53): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-  Generando código...
-  Compilando...
-  TestRB1.cpp
-c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbody.h(17): warning C4244: '=' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\testrb1.cpp(16): warning C4244: 'inicializando' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-  Generando código...
+c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbodyspawn.cpp(43): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbodyspawn.cpp(49): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbodyspawn.cpp(55): warning C4244: 'argumento' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
+c:\users\user\desktop\sim\motorfisicav2\freeglut project 3d\rigidbodyspawn.cpp(55): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
   freeglut project 3D.vcxproj -> C:\Users\User\Desktop\Sim\MotorFisicaV2\Debug\freeglut project 3D.exe

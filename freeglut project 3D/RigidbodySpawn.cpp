@@ -33,11 +33,28 @@ void RigidbodySpawn::update(GLfloat deltaTime)
 }
 
 void RigidbodySpawn::replicaCubos() {
-	vectorRigidBody.push_back(createSolid(PuntoVector3D(0, 0, 0, 1), 1, 90));
 
-	vectorRigidBody.push_back(createSolid(PuntoVector3D(0, 0, 20, 1), 1, 80));
+	int desplX = 0, desplZ = 0;
+	int accY = 100;
 
-	vectorRigidBody.push_back(createSolid(PuntoVector3D(0, 0, 40, 1), 1, 70));
+	//Colores distintos para las filas.
+
+	for (int i = 0; i < 4; i++) {
+		vectorRigidBody.push_back(createSolid(PuntoVector3D(0, 0, desplX+=20, 1), 1, accY-=10, PuntoVector3D (1,0,0,1)));
+	}
+
+	 desplX = 0;
+	 accY = 100;
+	for (int j = 0; j < 4; j++) {
+		vectorRigidBody.push_back(createSolid(PuntoVector3D(30, 0, desplX += 20, 1), 1, accY -= 10, PuntoVector3D(1, 1 , 0, 1)));
+	}
+
+	desplX = 0;
+	accY = 100;
+	for (int k = 0; k < 4; k++) {
+		vectorRigidBody.push_back(createSolid(PuntoVector3D(60, 0, desplX += 20, 1), 1, accY -= 10, PuntoVector3D(0.87, 0.31, 1, 1)));
+	}
+	
 }
 
 void RigidbodySpawn::dibuja(){
@@ -46,11 +63,11 @@ void RigidbodySpawn::dibuja(){
 	}
 }
 
-Rigidbody* RigidbodySpawn::createSolid(PuntoVector3D pos, int rbMass, GLfloat accY)
+Rigidbody* RigidbodySpawn::createSolid(PuntoVector3D pos, int rbMass, GLfloat accY, PuntoVector3D newColour)
 {
-	Rigidbody* rb = new Rigidbody(pos, accY);
+	Rigidbody* rb = new Rigidbody(pos, accY, newColour);
 
-	rb->setColor(PuntoVector3D(1, 0.3, 0.6, 1));
+	//rb->setColor(PuntoVector3D(1, 0.3, 0.6, 1));
 	rb->setSize(10);
 	rb->setMass(rbMass);
 	rb->setVel(PuntoVector3D(10, 0, 0, 1));

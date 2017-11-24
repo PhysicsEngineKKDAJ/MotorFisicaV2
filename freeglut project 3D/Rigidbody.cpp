@@ -3,7 +3,7 @@
 #define BOTTOM_DEADZONE 0
 #define TOP_DEADZONE 1000
 
-Rigidbody::Rigidbody(PuntoVector3D pos, GLfloat accY)
+Rigidbody::Rigidbody(PuntoVector3D pos, GLfloat accY, PuntoVector3D color_)
 {
 	pos_ = pos;
 	posInicial = pos;
@@ -12,7 +12,7 @@ Rigidbody::Rigidbody(PuntoVector3D pos, GLfloat accY)
 
 	gravedad_ = GRAVITY;
 	size_ = 1;
-	cubo = new Cubo(10, Color{ 1.0, 0.4, 1.0 });
+	cubo = new Cubo(10, Color{ color_.getX(), color_.getY(), color_.getZ() });
 }
 
 
