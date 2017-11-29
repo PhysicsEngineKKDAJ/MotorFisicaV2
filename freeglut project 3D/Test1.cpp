@@ -5,8 +5,8 @@
 Test1::Test1() :lastTimeUpdate(0), frequency(10)
 {
 	world_ = new World();
-	rainParticles1 = new ParticleRainSystem(world_,PuntoVector3D(100, 0, 0, 0));
-	rainParticles2 = new ParticleRainSystem(world_, PuntoVector3D(0, 0, 100, 0));
+	rainParticles1 = new ParticleRainSystem(world_,PuntoVector3D(100, 0, 0, 0),10);
+	rainParticles2 = new ParticleRainSystem(world_, PuntoVector3D(0, 0, 100, 0),10);
 }
 
 

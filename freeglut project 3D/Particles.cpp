@@ -8,15 +8,14 @@
 #define TOP_DEADZONE 300
 #define BOTTOM_DEADZONE 0
 
-Particles::Particles(World *world,PuntoVector3D p, GLfloat gravedad, GLfloat maxVida, GLfloat minVida) :Objeto3DFisico()
+Particles::Particles(World *world,PuntoVector3D p, GLfloat maxVida, GLfloat minVida) :Objeto3DFisico()
 {
 	world_ = world;
-	pos_ = posInicial=  p;
-	acc_ = PuntoVector3D(0, gravedad, 0, 1);
+	pos_ =  p;
+	acc_ = PuntoVector3D(0, world->getGravity()->getY(), 0, 1);
 	vel_ = PuntoVector3D(0, 0, 0, 1);
 	segundos_ = glutGet(GLUT_ELAPSED_TIME);
 	life_ = lifeAct_ =world_->getRandomNum(minVida, maxVida);
-	gravedad_ = gravedad;
 	size_ = 1;
 }
 

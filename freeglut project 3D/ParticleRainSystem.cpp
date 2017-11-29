@@ -1,39 +1,50 @@
 #include "ParticleRainSystem.h"
 
 
-ParticleRainSystem::ParticleRainSystem(World* world,PuntoVector3D pos) 
+ParticleRainSystem::ParticleRainSystem(World* world, PuntoVector3D pos, GLfloat r) 
 {
 	world_ = world;
 	pos_ = pos;
+	radius_ = r;
 }
 
 
 ParticleRainSystem::~ParticleRainSystem()
 {
-	for (auto p : particleVector) 
-		delete p;
-	
+	std::list<Particles*>::iterator it = particles.begin();
+
+	while (!particles.empty())
+	{
+		delete (*it);
+		it = particles.erase(it);
+	}
+
 }
 void ParticleRainSystem::update(GLfloat deltaTime)
 {
-	for (size_t i = 0; i < particleVector.size(); i++)
+	std::list<Particles*>::iterator it = particles.begin();
+
+	while (!particles.empty() && it != particles.end())
 	{
 		//Cambia el color en función de la vida que tiene.
-		particleVector[i]->update(deltaTime);
+		(*it)->update(deltaTime);
 
-		//Limpia las partículas muertas
-		if (particleVector[i]->getDestroy()) 
-			particleVector.erase(particleVector.begin() + i);
 		
+		//Limpia las partículas muertas
+		if ((*it)->getDestroy())
+			it = particles.erase(it);
+		else
+		
+			++it;
 	}
-
+	
 	//Crea nuevas partículas para tener un flujo constante
-	if (particleVector.size() < 8000)
+	if (particles.size() < 8000)
 	{
 		for (size_t i = 0; i < 10; i++)
-			particleVector.push_back(createParticle());
-
+			particles.push_back(createParticle());
 	}
+
 }
 /*
 Constructora dinámica de partículas. Asigna una posicion inicial, un color y la velocidad-
@@ -42,13 +53,14 @@ Y la devuelve.
 */
 Particles* ParticleRainSystem::createParticle()
 {
-	ang = world_->getRandomNum(0, 360);
-	GLfloat radius = 10;
-	GLfloat random = world_->getRandomNum(-radius, radius);
+	//Aleatoriedad de la particula
+	GLfloat ang = world_->getRandomNum(0, 360);
+	GLfloat random = world_->getRandomNum(-radius_, radius_);
 	GLfloat alt = world_->getRandomNum(150,250);
-	Particles *p = new Particles(world_, PuntoVector3D(pos_.getX() + random * cos(ang), alt, pos_.getZ() + random * sin(ang), 0), world_->getGravity()->getY(), 300, 100);
-
 	int randomColor = world_->getRandomNum(0, 5);
+
+	Particles *p = new Particles(world_, PuntoVector3D(pos_.getX() + random * cos(ang), alt, pos_.getZ() + random * sin(ang), 0), 300, 100);
+
 	switch (randomColor)
 	{
 	case Blanco:
@@ -75,6 +87,15 @@ Particles* ParticleRainSystem::createParticle()
 }
 
 void ParticleRainSystem::dibuja() {
-	for (auto &p : particleVector) 
-		p->dibuja();
+	if (!particles.empty())
+	{
+		std::list<Particles*>::iterator it = particles.begin();
+
+		while (!particles.empty() && it != particles.end())
+		{
+			(*it)->dibuja();
+			++it;
+		}
+	}
+
 };
