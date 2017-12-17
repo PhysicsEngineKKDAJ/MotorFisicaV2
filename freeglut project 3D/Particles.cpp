@@ -5,16 +5,13 @@
 #include <stdio.h>
 #include <iostream>
 
-#define TOP_DEADZONE 300
-#define BOTTOM_DEADZONE 0
-
 Particles::Particles(World *world,PuntoVector3D p, GLfloat maxVida, GLfloat minVida) :Objeto3DFisico()
 {
 	world_ = world;
 	pos_ =  p;
-	acc_ = PuntoVector3D(0, world->getGravity()->getY(), 0, 1);
 	vel_ = PuntoVector3D(0, 0, 0, 1);
-	segundos_ = glutGet(GLUT_ELAPSED_TIME);
+	acc_ = PuntoVector3D(0, world->getGravity()->getY(), 0, 1);
+	seconds_ = glutGet(GLUT_ELAPSED_TIME);
 	life_ = lifeAct_ =world_->getRandomNum(minVida, maxVida);
 	size_ = 1;
 }
@@ -38,7 +35,7 @@ void Particles::dibuja() {
 
 
 void Particles::update(GLfloat dt) {
-	dt -= segundos_;
+	dt -= seconds_;
 	dt /= 10000;
 
 	PuntoVector3D aceleration = acc_;
@@ -52,7 +49,7 @@ void Particles::update(GLfloat dt) {
 	pos_.sumar(&Velocidad);
 
 	lifeAct_--;
-	if (pos_.getY() <= BOTTOM_DEADZONE || pos_.getY() >= TOP_DEADZONE || lifeAct_ <= 0) 
+	if (pos_.getY() <= DeadTriggerDown || pos_.getY() >= DeadTriggerUp || lifeAct_ <= 0)
 		setDestroy(true);
 	
 

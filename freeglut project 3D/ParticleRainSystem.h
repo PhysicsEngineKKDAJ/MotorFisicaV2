@@ -24,8 +24,10 @@ public:
 	Particles *createParticle();					//Creadora dinámica de partículas
 
 private:
-	std::list<Particles*> particles;			//Vector de partículas
+	std::list<Particles*> particles;			//lista de partículas
 	
-	GLfloat radius_;
+	GLfloat radius_; //Radio de las partículas
+	const int NumMaxParticles = 400;
+	const int ParticlesPerTick = 10;
 };
 #endif

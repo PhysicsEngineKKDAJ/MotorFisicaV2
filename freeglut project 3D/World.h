@@ -18,6 +18,7 @@ public:
 		return min + static_cast <GLfloat> (rand()) / (static_cast <GLfloat> (RAND_MAX / (max - min)));
 	}
 
+	//NO SE USA
 	// Metodo que nos devuelve un punto aleatorio 
 	// a partir de una direccion aleatoria que se define
 	// dentro.

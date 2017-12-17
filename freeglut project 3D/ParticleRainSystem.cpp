@@ -1,6 +1,5 @@
 #include "ParticleRainSystem.h"
 
-
 ParticleRainSystem::ParticleRainSystem(World* world, PuntoVector3D pos, GLfloat r) 
 {
 	world_ = world;
@@ -26,7 +25,6 @@ void ParticleRainSystem::update(GLfloat deltaTime)
 
 	while (!particles.empty() && it != particles.end())
 	{
-		//Cambia el color en función de la vida que tiene.
 		(*it)->update(deltaTime);
 
 		
@@ -39,9 +37,9 @@ void ParticleRainSystem::update(GLfloat deltaTime)
 	}
 	
 	//Crea nuevas partículas para tener un flujo constante
-	if (particles.size() < 8000)
+	if (particles.size() < NumMaxParticles)
 	{
-		for (size_t i = 0; i < 10; i++)
+		for (size_t i = 0; i < ParticlesPerTick; i++)
 			particles.push_back(createParticle());
 	}
 
@@ -59,7 +57,7 @@ Particles* ParticleRainSystem::createParticle()
 	GLfloat alt = world_->getRandomNum(150,250);
 	int randomColor = world_->getRandomNum(0, 5);
 
-	Particles *p = new Particles(world_, PuntoVector3D(pos_.getX() + random * cos(ang), alt, pos_.getZ() + random * sin(ang), 0), 300, 100);
+	Particles *p = new Particles(world_, PuntoVector3D(pos_.getX() + random * cos(ang), alt, pos_.getZ() + random * sin(ang), 0), 100, 300);
 
 	switch (randomColor)
 	{

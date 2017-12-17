@@ -4,6 +4,7 @@
 #include "World.h"
 #include "Objeto3DFisico.h"
 
+//Ejemplo de particulas
 class Test1
 {
 public:

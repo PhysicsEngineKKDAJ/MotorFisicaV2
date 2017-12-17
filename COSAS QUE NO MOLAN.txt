@@ -1,0 +1,3 @@
+World.h: getRandomNum(): Los static cast esos no molan
+Particles.h: Hay atributos que no usamos
+Objeto3DFisico: Por qué está size ahi? solo lo necesito para particuls no?
