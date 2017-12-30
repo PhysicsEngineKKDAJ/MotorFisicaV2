@@ -1,61 +1,21 @@
-﻿Compilación iniciada a las 17/12/2017 15:55:18.
-     1>Proyecto "D:\hlocal\MotorFisicaV2\freeglut project 3D\freeglut project 3D.vcxproj" en el nodo 2 (Build destinos).
-     1>ClCompile:
-         D:\visual\VC\bin\CL.exe /c /ID:\hlocal\MotorFisicaV2\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ParticleRainSystem.cpp Particles.cpp Test1.cpp
-         Particles.cpp
-     1>d:\hlocal\motorfisicav2\freeglut project 3d\particles.cpp(28): warning C4244: 'argumento' : conversión de 'GLdouble' a 'GLfloat'; posible pérdida de datos
-         ParticleRainSystem.cpp
-     1>d:\hlocal\motorfisicav2\freeglut project 3d\particlerainsystem.cpp(40): warning C4018: '<' : no coinciden signed/unsigned
-     1>d:\hlocal\motorfisicav2\freeglut project 3d\particlerainsystem.cpp(42): warning C4018: '<' : no coinciden signed/unsigned
-     1>d:\hlocal\motorfisicav2\freeglut project 3d\particlerainsystem.cpp(58): warning C4244: 'inicializando' : conversión de 'GLfloat' a 'int'; posible pérdida de datos
-         Generando código...
-         Compilando...
-         Test1.cpp
-     1>d:\hlocal\motorfisicav2\freeglut project 3d\test1.cpp(20): warning C4244: 'inicializando' : conversión de 'int' a 'GLfloat'; posible pérdida de datos
-         Generando código...
-       Link:
-         D:\visual\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\hlocal\MotorFisicaV2\Debug\freeglut project 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\hlocal\MotorFisicaV2\freeglut\lib\ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\hlocal\MotorFisicaV2\Debug\freeglut project 3D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\hlocal\MotorFisicaV2\Debug\freeglut project 3D.lib" /MACHINE:X86 Debug\ArbolCono1.obj
-         Debug\ArbolCono2.obj
-         Debug\ArbolEsfera1.obj
-         Debug\ArbolEsfera2.obj
-         Debug\Cara.obj
-         Debug\Cilindro.obj
-         Debug\Coche.obj
-         Debug\Cono.obj
-         Debug\CopaCono.obj
-         Debug\CopaDobleCono.obj
-         Debug\CopaDobleEsfera.obj
-         Debug\CopaEsfera.obj
-         Debug\Cubo.obj
-         Debug\CuboRevolucion.obj
-         Debug\Disco.obj
-         Debug\DiscoParcial.obj
-         Debug\Escena.obj
-         Debug\Esfera.obj
-         Debug\FalsoTetraedro.obj
-         Debug\Hipotrocoide.obj
-         Debug\main.obj
-         Debug\Malla.obj
-         Debug\MassCenter.obj
-         Debug\Objeto3DFisico.obj
-         Debug\ObjetoCompuesto.obj
-         Debug\ObjetoCuadrico.obj
-         Debug\ParticleRainSystem.obj
-         Debug\Particles.obj
-         Debug\PuntoVector3D.obj
-         Debug\QuadTree.obj
-         Debug\QuadtreeNode.obj
-         Debug\Rigidbody.obj
-         Debug\RigidbodySpawn.obj
-         Debug\Rueda.obj
-         Debug\TAfin.obj
-         Debug\Test1.obj
-         Debug\TestRB1.obj
-         Debug\VerticeNormal.obj
-         Debug\World.obj
-         freeglut project 3D.vcxproj -> D:\hlocal\MotorFisicaV2\Debug\freeglut project 3D.exe
-     1>Compilación del proyecto terminada "D:\hlocal\MotorFisicaV2\freeglut project 3D\freeglut project 3D.vcxproj" (Build destinos).
-
-Compilación correcta.
-
-Tiempo transcurrido 00:00:02.79
+﻿  Physics_Functions.cpp
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(46): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(74): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(77): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(138): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(146): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(183): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(191): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(252): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(256): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(261): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(302): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(309): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(310): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(268): warning C4101: 'd1': variable local sin referencia
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(269): warning C4101: 'ra': variable local sin referencia
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(269): warning C4101: 'rb': variable local sin referencia
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(270): warning C4101: 'err_l': variable local sin referencia
+d:\documentos\ucm\física\motorfisicav2\freeglut project 3d\physics_functions.cpp(268): warning C4101: 'd2': variable local sin referencia
+  freeglut project 3D.vcxproj -> D:\Documentos\UCM\Física\MotorFisicaV2\Debug\freeglut project 3D.exe
+  freeglut project 3D.vcxproj -> D:\Documentos\UCM\Física\MotorFisicaV2\Debug\freeglut project 3D.pdb (Full PDB)

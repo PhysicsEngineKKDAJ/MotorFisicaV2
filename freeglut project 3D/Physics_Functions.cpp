@@ -1,5 +1,6 @@
 #include "Physics_Functions.h"
 
+const short NumParticulas = 125;
 
 //VARIABLES GLOBALES DE LA CLASE
 vector<Particles> particulas(NumParticulas);
@@ -18,7 +19,7 @@ Particles *P;	//array of particles to reference(p3d or pp3d)
 short P_C;
 double b_g = 6.67384*0.000080, s_g; // el 6.67384 es la constante de gravitación universal
 const short NumEstrellas = 1000;
-const short NumParticulas = 125;
+
 
 PuntoVector3D accUniversalGravitation(State ip)
 {
@@ -51,7 +52,7 @@ PuntoVector3D accUniversalGravitation(State ip)
 
 }
 
-PuntoVector3D accDirectionalGravity() { return PuntoVector3D(0, -10, 0, 1); }
+PuntoVector3D accDirectionalGravity(State s) { return PuntoVector3D(0, -10, 0, 1); }
 
 
 // evaluar es que le pasas un indice y le aplica las ecuaciones a la posicion y velocidad.
@@ -72,7 +73,12 @@ Derivative evaluate(int ip, float dt, Derivative &d)
 	state1.id = ip;
 	state1.mass = P[ip].getMasa();
 	// dp (derivada de la aceleracion), dt (derivada del tiempo)
-	state1.lastPos = P[ip].getPos + d.dPosition.mult(dt) + d.dVelocity.mult(0.5*dt*dt);
+
+	d.dVelocity.mult(0.5*dt*dt);
+	d.dPosition.mult(dt);
+	d.dPosition.sumar(&d.dVelocity);
+	P[ip].getPos().sumar(&d.dPosition);
+	state1.lastPos = P[ip].getPos();
 
 	d.dVelocity.mult(dt);
 	P[ip].getVel().sumar(&d.dVelocity);

@@ -43,6 +43,8 @@ struct State
 class Particles : public Objeto3DFisico
 {
 public:
+	Particles() {}
+
 	//Constructora principal - Cascada
 	Particles(World *world,PuntoVector3D p, GLfloat minLife, GLfloat maxLife);
 

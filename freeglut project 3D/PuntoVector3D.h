@@ -3,6 +3,7 @@
 
 //#include <math.h>
 #include <GL/freeglut.h>
+#include <math.h>
 
 class PuntoVector3D {
 	private:
