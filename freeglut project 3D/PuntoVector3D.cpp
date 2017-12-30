@@ -55,6 +55,12 @@ void PuntoVector3D::sumar(PuntoVector3D* pv) {
     z+=pv->getZ();
 }
 
+void PuntoVector3D::resta(PuntoVector3D* pv) {
+	x -= pv->getX();
+	y -= pv->getY();
+	z -= pv->getZ();
+}
+
 PuntoVector3D* PuntoVector3D::clonar() {
     return new PuntoVector3D(x, y, z, pv);
 }

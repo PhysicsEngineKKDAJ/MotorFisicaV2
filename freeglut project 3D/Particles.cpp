@@ -16,6 +16,16 @@ Particles::Particles(World *world,PuntoVector3D p, GLfloat maxVida, GLfloat minV
 	size_ = 1;
 }
 
+Particles::Particles(World *world, PuntoVector3D p, PuntoVector3D v, double r, double m) :Objeto3DFisico()
+{
+	world_ = world;
+	pos_ = p;
+	vel_ = v;
+	masa_ = m;
+	radio_ = r;
+	
+}
+
 
 Particles::~Particles()
 {

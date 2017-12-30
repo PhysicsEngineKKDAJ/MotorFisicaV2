@@ -21,10 +21,12 @@ class PuntoVector3D {
         void escalar(GLfloat factor);
         void normalizar();
         void sumar(PuntoVector3D* pv);
+		void resta(PuntoVector3D* pv);
         PuntoVector3D* clonar();
 		void mult(GLfloat n) { x *= n; y *= n; z *= n; }
         GLfloat productoEscalar(PuntoVector3D* vector);
         PuntoVector3D* productoVectorial(PuntoVector3D* vector);
+		double Magnitude() { return sqrt(x*x + y*y + z*z); }
 };
 #endif
 

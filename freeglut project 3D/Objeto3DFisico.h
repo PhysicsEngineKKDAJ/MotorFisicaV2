@@ -4,6 +4,13 @@
 #include "Objeto3D.h"
 #include "World.h"
 
+
+//Struct de la derivada de Posición y Velocidad
+struct Derivative
+{
+	PuntoVector3D dPosition, dVelocity;
+};
+
 class Objeto3DFisico : public Objeto3D
 {
 public:
@@ -11,10 +18,18 @@ public:
 	~Objeto3DFisico();
 	//Particles
 	void setPos(PuntoVector3D aux){ pos_ = aux; }
+	GLfloat getPosX() { return pos_.getX(); };
+	GLfloat getPosY() { return pos_.getY(); };
+	GLfloat getPosZ() { return pos_.getZ(); };
+	PuntoVector3D getPos() { return pos_; };
+
 	void setVel(PuntoVector3D aux){ vel_ = aux; }
+	PuntoVector3D getVel() { return vel_; };
 
 	void setDestroy(bool b) { _eliminar = b; }
 	bool getDestroy() { return _eliminar; }
+
+	void setAcc(PuntoVector3D aux) { acc_ = aux; };
 
 	//ParticleRainSystem
 	void setColor(Color aux){ color_ = aux; }

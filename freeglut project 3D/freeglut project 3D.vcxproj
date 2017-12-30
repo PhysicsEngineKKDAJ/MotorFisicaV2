@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -19,14 +19,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -85,6 +85,7 @@
     <ClCompile Include="Escena.cpp" />
     <ClCompile Include="Esfera.cpp" />
     <ClCompile Include="FalsoTetraedro.cpp" />
+    <ClCompile Include="Help_Functions.cpp" />
     <ClCompile Include="Hipotrocoide.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Malla.cpp" />
@@ -94,6 +95,7 @@
     <ClCompile Include="ObjetoCuadrico.cpp" />
     <ClCompile Include="ParticleRainSystem.cpp" />
     <ClCompile Include="Particles.cpp" />
+    <ClCompile Include="Physics_Functions.cpp" />
     <ClCompile Include="PuntoVector3D.cpp" />
     <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="QuadtreeNode.cpp" />
@@ -102,6 +104,7 @@
     <ClCompile Include="Rueda.cpp" />
     <ClCompile Include="TAfin.cpp" />
     <ClCompile Include="Test1.cpp" />
+    <ClCompile Include="TestOrbitas.cpp" />
     <ClCompile Include="TestRB1.cpp" />
     <ClCompile Include="VerticeNormal.cpp" />
     <ClCompile Include="World.cpp" />
@@ -126,7 +129,9 @@
     <ClInclude Include="Escena.h" />
     <ClInclude Include="Esfera.h" />
     <ClInclude Include="FalsoTetraedro.h" />
+    <ClInclude Include="Help_Functions.h" />
     <ClInclude Include="Hipotrocoide.h" />
+    <ClInclude Include="Includes.h" />
     <ClInclude Include="Malla.h" />
     <ClInclude Include="MassCenter.h" />
     <ClInclude Include="Objeto3D.h" />
@@ -135,6 +140,7 @@
     <ClInclude Include="ObjetoCuadrico.h" />
     <ClInclude Include="ParticleRainSystem.h" />
     <ClInclude Include="Particles.h" />
+    <ClInclude Include="Physics_Functions.h" />
     <ClInclude Include="PuntoVector3D.h" />
     <ClInclude Include="QuadTree.h" />
     <ClInclude Include="QuadtreeNode.h" />
@@ -143,6 +149,7 @@
     <ClInclude Include="Rueda.h" />
     <ClInclude Include="TAfin.h" />
     <ClInclude Include="Test1.h" />
+    <ClInclude Include="TestOrbitas.h" />
     <ClInclude Include="TestRB1.h" />
     <ClInclude Include="VerticeNormal.h" />
     <ClInclude Include="World.h" />
